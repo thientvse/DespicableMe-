@@ -1,4 +1,5 @@
 import 'package:despicableme/models/character.dart';
+import 'package:despicableme/styleguide.dart';
 import 'package:flutter/material.dart';
 
 class CharacterWidget extends StatelessWidget {
@@ -29,10 +30,21 @@ class CharacterWidget extends StatelessWidget {
           ),
         ),
         Align(
-          alignment: ,
-          child: Image.asset(
-            characters[0].imagePath,
-            height: screenHeight*0.55,
+          alignment: Alignment(0, -0.5),
+            child: Image.asset(
+              characters[0].imagePath,
+              height: screenHeight*0.55,
+            ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 48, right: 16, bottom: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+                  Text(characters[0].name, style: AppTheme.heading,),
+                  Text("Tap to read more", style: AppTheme.subHeading,)
+            ],
           ),
         )
       ]
